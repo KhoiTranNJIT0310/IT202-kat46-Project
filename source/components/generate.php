@@ -14,7 +14,7 @@ $height = filter_input(INPUT_POST, 'height', FILTER_VALIDATE_INT);
 $declared_value = filter_input(INPUT_POST, 'declared_value', FILTER_VALIDATE_INT);
 $shipping_company = filter_input(INPUT_POST, 'shipping_company',);
 $date = strtotime($_POST['date']);
-$date = date('Y-m-d', $date);
+$newdate = date('Y-m-d', $date);
 $next_day = filter_input(INPUT_POST, 'next_day');
 $priority = filter_input(INPUT_POST, 'priority');
 
@@ -65,7 +65,16 @@ $dimension = $length . 'x' . $width . 'x' . $height . ' inches';
 $declared_value = '$' . $declared_value;
 $date = '';
 
-$shipping_class = $next_day ." " . $priority;
+if ($next_day == true && $priority == true) {
+    $shipping_class = $next_day ." & " . $priority;
+
+    
+}
+else{
+    $shipping_class = $next_day ." " . $priority;
+
+}
+
 ?>
 
 <html>
@@ -114,7 +123,7 @@ $shipping_class = $next_day ." " . $priority;
             </div>
             <div class="detail">
                 <label>Ship Date:</label>
-                <span><?php echo $date; ?></span>
+                <span><?php echo $newdate; ?></span>
             </div>
         </div>
     </div>
