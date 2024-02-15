@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="../style/each-product.css">
 </head>
-<!-- hi -->
+<!-- hi  -->
 
 <body>
 
