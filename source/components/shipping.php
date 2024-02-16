@@ -5,6 +5,7 @@
 </header>
 <?php
 include("navbar.php");
+
 if (!isset($fname)) {
     $fname = '';
 }
