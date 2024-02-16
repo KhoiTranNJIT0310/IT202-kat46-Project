@@ -4,8 +4,12 @@ IT 202-002
 Phase 1 Assignment: HTML5 and PHP Form
 kat46@njit.edu -->
 <html>
+
 <head>
-    <!-- include logo and Css style sheet -->
+    <!-- include logo, font and Css style sheet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style/shipping.css">
     <link rel="icon" href="../images/logo.png" type="image/png">
 </head>
@@ -48,41 +52,42 @@ if (!isset($declared_value)) {
 }
 ?>
 <!-- wrpper that wrap the whole page -->
+<figure>
 <div class="shipping-wrapper">
     <div class="heading">Shipping label generator</div>
     <?php if (!empty($error_message)) {  ?>
-    <h1 style="color: red;"><?php echo htmlspecialchars($error_message); ?></h1>
-<?php } ?>
+        <h1 style="color: red;"><?php echo htmlspecialchars($error_message); ?></h1>
+    <?php } ?>
     <div class="shipping">
         <form action="generate.php" method="post">
             <div class="recipient">
                 <div class="title">Recipient's Address</div>
                 <div class="adress">
                     <!-- First Name -->
-                        <label for="">First Name:</label>
-                        <input type="text" name="fname" value="<?php echo htmlspecialchars($fname); ?>">
-                        <!-- last name -->
-                        <label for="">Last Name:</label>
-                        <input type="text" name="lname" value="<?php echo htmlspecialchars($lname); ?>">
-                        <!-- Address -->
-                        <label for="">Street Address:</label>
-                        <input type="text" name="address" value="<?php echo htmlspecialchars($address); ?>">
-                        <label for="">City:</label>
-                        <!-- city -->
-                        <input type="text" name="city" value="<?php echo htmlspecialchars($city); ?>">
-                        <label for="">State:</label>
-                        <!-- state -->
-                        <input type="text" name="state" value="<?php echo htmlspecialchars($state); ?>">
-                        <label for="">Zip Code:</label>
-                        <!-- Zip code -->
-                        <input type="text" name="zipcode" value="<?php echo htmlspecialchars($zipcode); ?>">
+                    <label for="">First Name:</label>
+                    <input type="text" name="fname" value="<?php echo htmlspecialchars($fname); ?>">
+                    <!-- last name -->
+                    <label for="">Last Name:</label>
+                    <input type="text" name="lname" value="<?php echo htmlspecialchars($lname); ?>">
+                    <!-- Address -->
+                    <label for="">Street Address:</label>
+                    <input type="text" name="address" value="<?php echo htmlspecialchars($address); ?>">
+                    <label for="">City:</label>
+                    <!-- city -->
+                    <input type="text" name="city" value="<?php echo htmlspecialchars($city); ?>">
+                    <label for="">State (type the first 2 characters):</label>
+                    <!-- state -->
+                    <input type="text" name="state" maxlength="2"  value="<?php echo htmlspecialchars($state); ?>">
+                    <label for="">Zip Code:</label>
+                    <!-- Zip code -->
+                    <input type="text" name="zipcode" value="<?php echo htmlspecialchars($zipcode); ?>">
                 </div>
 
             </div>
 
             <!-- Package details -->
 
-            <div class="title" >Package Information</div>
+            <div class="title">Package Information</div>
             <div class="package">
                 <div class="item">
                     <!-- date calendar -->
@@ -106,7 +111,7 @@ if (!isset($declared_value)) {
                     <!-- Shipping Company -->
                     <label for="">Shipping Company:</label>
                     <select name="shipping_company" value="<?php echo $shipping_company ?>">
-                    <!-- individual option -->
+                        <!-- individual option -->
                         <option value=""></option>
                         <option value="USPS">USPS</option>
                         <option value="UPS">UPS</option>
@@ -124,11 +129,13 @@ if (!isset($declared_value)) {
 
     </div>
     <!-- button -->
-    <input class ="button" type="submit" value="Generate Label">
+    <input class="button" type="submit" value="Generate Label">
     </form>
 </div>
 </div>
-<?php 
+</figure>
+<?php
 include("footer.php");
 ?>
+
 </html>

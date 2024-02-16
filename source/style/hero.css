@@ -20,7 +20,7 @@ kat46@njit.edu  */
     max-width: 1440px;
     align-items: center;
     /* justify-content: space-between; */
-    margin: 0 auto;
+    margin: 0 auto; 
 }
 .content-left{
     margin: 40px auto;
@@ -32,7 +32,7 @@ kat46@njit.edu  */
 margin: 40px auto;
 }
 .hero-image{
-    max-width: 600px;
+    max-width: 700px;
 }
 .heading{
     color: #412f34;
