@@ -1,5 +1,9 @@
+<!-- Khoi Tran 
+Febuary 16th 2024
+IT 202-002
+Phase 1 Assignment: HTML5 and PHP Form
+kat46@njit.edu -->
 <?php
-
 // get the data from the form
 $fname = filter_input(INPUT_POST, 'fname');
 $lname = filter_input(INPUT_POST, 'lname');
@@ -17,7 +21,7 @@ $date = strtotime($_POST['date']);
 $newdate = date('Y-m-d', $date);
 $next_day = filter_input(INPUT_POST, 'next_day');
 $priority = filter_input(INPUT_POST, 'priority');
-
+// createing an error message
 $error_message = '';
 // validate first name
 if ($fname === '' || $fname === FALSE) {
@@ -62,7 +66,6 @@ if ($shipping_company === false || $shipping_company === '') {
 if ($next_day === '' && $priority === '') {
     $error_message = "Shipping Class cannot be empty";
 }
-
 // if an error message exists, go back to the form
 if ($error_message != '') {
     include('shipping.php');
@@ -73,19 +76,16 @@ if ($error_message != '') {
 $dimension = $length . 'x' . $width . 'x' . $height . ' inches';
 $declared_value = '$' . $declared_value;
 $date = '';
-
+// condition for the shipping class
 if ($next_day == true && $priority == true) {
-    $shipping_class = $next_day ." & " . $priority;
-
-    
+    $shipping_class = $next_day ." & " . $priority;   
 }
 else{
     $shipping_class = $next_day ." " . $priority;
-
 }
 
 ?>
-
+<!-- html content -->
 <html>
 
 <head>
@@ -94,48 +94,61 @@ else{
 </head>
 
 <body>
+    <!-- wrapper cover the whole page -->
     <div class="generate-wrapper">
+        <!-- OUt content -->
         <div class="generate">
+            <!-- Package dimension -->
             <div class="detail">
                 <label>Package Dimensions:</label>
                 <span><?php echo $dimension; ?></span>
                 <br>
             </div>
+            <!-- declaed value -->
             <div class="detail">
                 <label>Package declared Value:</label>
                 <span><?php echo $declared_value; ?></span>
                 <br>
             </div>
+            <!-- shipping company -->
             <div class="detail">
                 <label>Shipping Company:</label>
                 <span><?php echo $shipping_company; ?></span>
                 <br>
             </div>
+            <!-- shipping class -->
             <div class="detail">
                 <label>Shipping Class:</label>
                 <span><?php echo $shipping_class; ?></span>
                 <br>
             </div>
+            <!-- tracking number -->
             <div class="detail">
                 <label>Tracking Number:</label>
                 <span>A1234567890</span>
                 <br>
             </div>
+            <!-- barcode example -->
             <div class="detail">
                 <img src="../images/barcode.jpg" alt="">
                 <br>
             </div>
+            <!-- Order number -->
             <div class="detail">
                 <label>Order Number:</label>
                 <span><?php echo $number; ?></span>
                 <br>
             </div>
+            <!-- date -->
             <div class="detail">
                 <label>Ship Date:</label>
                 <span><?php echo $newdate; ?></span>
             </div>
         </div>
     </div>
+<?php 
+include("footer.php");
+?>
 </body>
 
 </html>

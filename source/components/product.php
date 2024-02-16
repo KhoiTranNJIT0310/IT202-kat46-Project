@@ -1,10 +1,18 @@
+<!-- Khoi Tran 
+Febuary 16th 2024
+IT 202-002
+Phase 1 Assignment: HTML5 and PHP Form
+kat46@njit.edu -->
 <html>
-
 <head>
     <link rel="stylesheet" href="../style/product.css">
     <link rel="icon" href="../images/logo.png" type="image/png">
 </head>
-
+<!-- Khoi Tran 
+Febuary 16th 2024
+IT 202-002
+Phase 1 Assignment: HTML5 and PHP Form
+kat46@njit.edu -->
 <body>
 
     <div class='product-wrapper'>
