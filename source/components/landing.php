@@ -21,7 +21,7 @@ kat46@njit.edu -->
 // hero section
 include("hero.php");
 // product section
-include("product.php");
+include("product_intro.php");
 include("footer.php");
 ?>;
 

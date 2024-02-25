@@ -26,6 +26,7 @@
 }
 
 .social-media {
+    cursor: pointer;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -36,6 +37,7 @@
 }
 
 .media-icon {
+    cursor: pointer;
     width: 20px;
 }
 

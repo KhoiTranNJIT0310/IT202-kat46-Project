@@ -1,89 +1,110 @@
-<!-- Khoi Tran 
-Febuary 16th 2024
-IT 202-002
-Phase 1 Assignment: HTML5 and PHP Form
-kat46@njit.edu -->
+<?php
+require_once('database_local.php');
+
+// get category ID
+$sustaincategories_id = filter_input(INPUT_GET, 'sustaincategories_id', FILTER_VALIDATE_INT);
+if ($sustaincategories_id == NULL || $sustaincategories_id == false) {
+    $sustaincategories_id = 1;
+}
+
+// Get name for selected category
+
+$queryCategory = 'SELECT * FROM  sustaincategories 
+WHERE sustainCategoryID = :sustaincategories_id';
+$statement1 = $db->prepare($queryCategory);
+// PDOstatemet
+$statement1->bindValue(':sustaincategories_id', $sustaincategories_id);
+$statement1->execute(); //execute;
+$category = $statement1->fetch();
+// DEBUGGING PURPOSE ONLY
+// echo "<pre>";
+// echo print_r($category);
+// echo "</pre>";
+// Debugging Purpose only
+$category_name = $category['sustainCategoryName'];
+$statement1->closeCursor();
+
+// Get all categories
+$queryAllCategories = 'SELECT * FROM sustaincategories
+ORDER BY sustainCategoryID';
+$statement2 = $db->prepare($queryAllCategories);
+$statement2->execute();
+$categories = $statement2->fetchAll();
+//Debugging only
+// echo "<prep>";
+// print_r($categories);
+// echo "</prep>";
+//Debuggin only
+$statement2->closeCursor();
+
+// Get products for the selected category
+$queryProducts = 'SELECT * FROM sustainitems
+WHERE sustainCategoryID = :sustaincategories_id
+ORDER BY sustainCategoryID ';;
+$statement3 = $db->prepare($queryProducts);
+$statement3->bindValue(':sustaincategories_id', $sustaincategories_id);
+$statement3->execute();
+$products = $statement3->fetchAll();
+//Debugging only
+// echo "<prep>";
+// print_r($products);
+// echo "</prep>";
+//Debugging only
+$statement3->closeCursor();
+?>
 <html>
+<!-- the head section -->
+
 <head>
-    <link rel="stylesheet" href="../style/product.css">
-    <link rel="icon" href="../images/logo.png" type="image/png">
+    <title>Sustainable Living Shop</title>
+    <link rel="stylesheet" href=product.css />
 </head>
-<!-- Khoi Tran 
-Febuary 16th 2024
-IT 202-002
-Phase 1 Assignment: HTML5 and PHP Form
-kat46@njit.edu -->
+<!-- The body section -->
+
 <body>
+    <?php
+include("navbar.php");
+?>;
+    <main>
+        <aside class = "container">
+            <h2> Our shop provide:</h2>
+            <table class="category-list">
+                <!-- from the queryAllCategories -->
+                <?php foreach ($categories as $category) : ?>
+                    <tr  >
+                        <a class="table-row" href="?sustaincategories_id=<?php  echo $category['sustainCategoryID']; ?>">
+                            <button ><?php echo $category['sustainCategoryName']; ?></button>
+                        </a>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </aside>
+        <section class="container">
+            <!-- display a table of products -->
+            <h2><?php echo $category_name; ?></h2>
+            <table class="responsive-table">
+                <tr class="table-header">
+                    <!-- <th> Category Name</th> -->
+                    <th> Product Code</th>
+                    <th> Product Name</th>
+                    <th> Description</th>
+                    <th>Price</th>
+                </tr>
+                <?php foreach ($products as $product) : ?>
+                    <tr class="table-row">
+                        <!-- <td> <?php echo $category_name; ?></td> -->
+                        <td><?php echo $product['sustainCode']; ?></td>
+                        <td><?php echo $product['sustainName']; ?></td>
+                        <td><?php echo $product['description']; ?></td>
+                        <td><?php echo $product['price']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
 
-    <div class='product-wrapper'>
-    <!-- Reusable Water Bottle -->
-        <div class="product">
-            <div class="content-left">
-                <div class="subheading">Reusable Water Bottle </div>
-                <div class="detail">Your eco-friendly hydration companion. Say goodbye to single-use plastics and stay hydrated on-the-go sustainably. Join us in making a positive impact with every sip.
-                    
-                </div>
-                <a href="bottle.php"> Go shop</a>
-            </div>
-            <div class="content-right">
-                <img class="hero-image" src="../images/bottle.jpg" alt="Hero image" />
-            </div>
-        </div>
-        <!-- Bamboo Toothbrush Set -->
-        <div class="product">
-            <div class="content-left">
-                <div class="subheading">Bamboo Toothbrush Set</div>
-                <div class="detail">The eco-conscious choice for your daily oral care routine. Made from sustainable bamboo, these toothbrushes offer a stylish and environmentally friendly alternative to traditional plastic brushes. With soft bristles for gentle yet effective cleaning, our set is designed to keep your smile bright while reducing plastic waste.
-                    
-                </div>
-                <a href="toothbrush.php"> Go shop</a>
-            </div>
-            <div class="content-right">
-                <img class="hero-image" src="../images/bamboo-toothbrush.jpg" alt="Hero image" />
-            </div>
-        </div>
-        <!-- Solar-powered Charger -->
-        <div class="product">
-            <div class="content-left">
-                <div class="subheading">Solar-powered Charger</div>
-                <div class="detail">The ultimate solution for eco-friendly and portable power on-the-go. Harnessing the energy of the sun, our charger allows you to charge your devices anywhere the sun shines, all while reducing your carbon footprint. Compact and lightweight, it's perfect for outdoor adventures, travel, and emergencies. 
-                    
-                </div>
-                <a href="charger.php"> Go shop</a>
-            </div>
-            <div class="content-right">
-                <img class="hero-image" src="../images/solar.png" alt="Hero image" />
-            </div>
-        </div>
-        <!-- Eco-friendly Shopping Bags    -->
-        <div class="product">
-            <div class="content-left">
-                <div class="subheading">Eco-friendly Shopping Bags</div>
-                <div class="detail">The sustainable solution for your everyday errands. Made from recycled materials and biodegradable fabrics, our bags are designed to reduce single-use plastic waste and minimize environmental impact. With sturdy construction and stylish designs, they're perfect for carrying groceries, running errands, or hitting the farmer's market.
-                    
-                </div>
-                <a href="shopping-bag.php"> Go shop</a>
-            </div>
-            <div class="content-right">
-                <img class="hero-image" src="../images/ecobag.png" alt="Hero image" />
-            </div>
-        </div>
-        <!-- LED Bulbs    -->
-        <div class="product">
-            <div class="content-left">
-                <div class="subheading">LED Bulbs </div>
-                <div class="detail"> The energy-efficient lighting solution that brightens your space while reducing electricity costs and environmental impact. Designed to last longer and consume less energy than traditional incandescent bulbs, our LEDs offer crisp, clear light for any room or fixture. Make the switch to LED and illuminate your home with sustainability in mind.
-                    
-                </div>
-                <a href="bulb.php"> Go shop</a>
-            </div>
-            <div class="content-right">
-                <img class="hero-image" src="../images/bulb.jpg" alt="Hero image" />
-            </div>
-        </div>
-        
-    </div>
-
+            </table>
+        </section>
+    </main>
 </body>
-
+<?php
+include("footer.php");
+?>;
 </html>

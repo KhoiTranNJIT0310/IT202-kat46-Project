@@ -52,7 +52,7 @@ if ($length === false || $length < 0 || $length > 36) {
     $error_message = "Width cannot be empty, less than 0 or greater than 36 inches";
 }
 // validate width
-if ($width === false || $width < 0 || $height > 36) {
+if ($width === false || $width < 0 || $width > 36) {
     $error_message = "Width cannot be empty, less than 0 or greater than 36 inches";
 }
 // validate height

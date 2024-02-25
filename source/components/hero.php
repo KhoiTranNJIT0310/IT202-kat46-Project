@@ -21,7 +21,7 @@ kat46@njit.edu -->
         <div class="content-left">
           <div class="heading">Sustainable store of Jersey</div>
           <div class="subheading">323 Dr Martin Luther King Jr Blvd, Newark, NJ 07102</div>
-          <div class="detail">We're your premier destination for eco-friendly products that prioritize both style and sustainability. From reusable essentials to energy-efficient solutions, we're passionate about offering products that help you live a greener lifestyle without compromising on quality. Join us in our mission to make conscious shopping accessible and enjoyable for all.
+          <div class="detail">We're your premier destination for eco-friendly products that prioritize both style and sustainability. From reusable essentials to energy-efficient solutions, we're passionate about offering products that help you live a greener lifestyle without compromising on quality.With each purchase, you're not just investing in a product – you're contributing to a brighter, cleaner future for generations to come. Join us in our mission to make conscious shopping accessible and enjoyable for all.
 
           </div>
         </div>

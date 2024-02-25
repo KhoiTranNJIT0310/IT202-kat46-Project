@@ -23,6 +23,7 @@ kat46@njit.edu -->
                 </div>
                 <div class="navbar-right">
                     <!-- shipping page -->
+                    <a class="navbar-title" href="product.php">Product</a>
                     <a class="navbar-title" href="shipping.php">Shipping</a>
                 </div>
             </div>
