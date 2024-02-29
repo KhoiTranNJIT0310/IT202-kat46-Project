@@ -7,6 +7,8 @@ kat46@njit.edu  */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins';
+    
 }
 body{
     background-color: #E7F9D5;
@@ -25,6 +27,7 @@ body{
 
 .navbar {
     background-color: #E7F9D5;
+    font-family: 'Poppins';
     width: 100%;
     /* position: fixed; */
     z-index: 100;

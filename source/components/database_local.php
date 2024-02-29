@@ -1,3 +1,8 @@
+<!-- Khoi Tran 
+Febuary 16th 2024
+IT 202-002
+Phase 2 Assignment:  Read SQL Data using PHP
+kat46@njit.edu -->
 <?php
 $dsn = 'mysql:host=localhost;port=3306;dbname=my_sustain_shop';
 $username = 'root';
