@@ -17,7 +17,7 @@ kat46@njit.edu -->
 
 <!-- Include each section into the landing page -->
 <!-- navigation bar -->
-<?php include("navbar.php");
+<?php include("header.php");
 // hero section
 include("hero.php");
 // product section

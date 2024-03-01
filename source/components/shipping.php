@@ -15,7 +15,7 @@ kat46@njit.edu -->
     <title>Shipping</title>
 <?php
 // include navigation bar
-include("navbar.php");
+include("header.php");
 // put default blank to the filling box
 if (!isset($fname)) {
     $fname = '';

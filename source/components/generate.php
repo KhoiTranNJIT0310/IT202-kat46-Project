@@ -105,7 +105,7 @@ if ($next_day == true && $priority == true) {
 <body>
     <?php
     // include navigation bar
-    include("navbar.php");
+    include("header.php");
     ?>
     <figure>
         <!-- wrapper cover the whole page -->

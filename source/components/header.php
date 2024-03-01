@@ -7,7 +7,7 @@ kat46@njit.edu -->
 <html>
 
 <head>
-    <link rel="stylesheet" href="../style/navbar.css">
+    <link rel="stylesheet" href="../style/header.css">
     <link rel="icon" href="../images/logo.png" type="image/png">
 </head>
 
