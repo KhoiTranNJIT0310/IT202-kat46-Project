@@ -5,7 +5,7 @@ Phase 2 Assignment:  Read SQL Data using PHP
 kat46@njit.edu -->
 
 <?php
-require_once('database_local.php');
+require_once('database_njit.php');
 
 // get category ID
 $sustaincategories_id = filter_input(INPUT_GET, 'sustaincategories_id', FILTER_VALIDATE_INT);
