@@ -1,6 +1,9 @@
 <?php
-// slide 24
-// For special case only
+// Khoi Tran 
+// Febuary 16th 2024
+// IT 202-002
+// Phase 2 Assignment:  Read SQL Data using PHP
+// kat46@njit.edu 
 $dsn = "mysql:host=sql1.njit.edu;port=3306;dbname=kat46";
 $username = "kat46";
 $password = "Amvnx2023@";

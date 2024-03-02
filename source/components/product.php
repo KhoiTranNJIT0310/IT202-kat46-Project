@@ -2,7 +2,7 @@
 Febuary 16th 2024
 IT 202-002
 Phase 2 Assignment:  Read SQL Data using PHP
-kat46@njit.edu -->
+kat46@njit.edu -->  
 
 <?php
 require_once('database_njit.php');
