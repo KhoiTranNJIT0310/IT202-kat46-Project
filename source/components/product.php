@@ -65,7 +65,6 @@ $statement3->closeCursor();
 <head>
     <title>Sustainable Living Shop</title>
     <link rel="icon" href="../images/logo.png" type="image/png">
-    <!-- <link rel="stylesheet" href=product.css />  -->
     <link rel="stylesheet" href="../style/product.css">
 </head>
 <!-- The body section -->

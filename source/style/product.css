@@ -5,7 +5,8 @@ IT 202-002
 Phase 2 Assignment:  Read SQL Data using PHP
 kat46@njit.edu */
 body {
-    font-family: 'lato', sans-serif;
+    /* font-family: 'lato', sans-serif; */
+    font-family: 'Poppins';
 }
 .container {
     max-width: 1000px;

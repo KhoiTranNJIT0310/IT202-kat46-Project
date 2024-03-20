@@ -1,0 +1,50 @@
+.create_product_form {
+    width: 500px;
+    margin: 15px auto;
+    background-color: #fcfcfc;
+    padding: 20px 50px 40px;
+    box-shadow: 1px 4px 10px 1px #aaa;
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+  }
+.container {
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+}
+  .create_product_form * {
+      box-sizing: border-box;
+  }
+  
+  .create_product_form input {
+    margin-top: 10px;
+  }
+  .create_product_form select {
+    margin-top: 10px;
+  }
+  
+  .create_product_form input[type=text] {
+    display: block;
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+    border: none;
+    background-color: #f3f3f3;
+  }
+  
+  .option {
+    display: flex;
+    height: 32px;
+    padding: 6px 16px;
+    width: 100%;
+  }
+
+  .create_product_form  .button{
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+}
