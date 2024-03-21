@@ -23,6 +23,7 @@ $statement->closeCursor();
 // Validate inputs
 $max_price = 30;
 $error = "";
+$success ="";
 // check for the file get the data
 if ($sustaincategories_id == NULL || $sustaincategories_id == FALSE) {
     $error = "We couldn't get the data!";
@@ -65,12 +66,12 @@ else {
     $statement->bindValue(':price', $price);
     $success = $statement->execute(); // execute
     $statement->closeCursor();
+    // create a sucess statement
     if ($success == 1) {
-        $success = "good!";
+        $success = " Your insert statement status is completed!";
     } else {
-        $success = " not good!";
+        $success = " Your insert statement status is not good!";
     };
-    echo "<p>Your insert statement status is $success </p>";
 }
 // Show error if there is any
 ?>
@@ -88,7 +89,8 @@ else {
     // Show error if there is any
     ?>
     <div class="container">
-    <h1><?php echo "$error <br>"; ?> </h1>
+    <h1><?php echo "$error <br>"; 
+    echo " $success ";?> </h1>
     <button class="button"><a href="product.php">View Product List</a></button>
     </div>
 </body>

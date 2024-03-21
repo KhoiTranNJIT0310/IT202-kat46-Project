@@ -60,7 +60,7 @@ include("header.php");
             </form>
             
         </main>
-
+<!-- include the footer -->
 <?php
 include("footer.php");
 ?>;
