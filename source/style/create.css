@@ -1,3 +1,8 @@
+ /* Khoi Tran 
+March 10  16th 2024
+IT 202-002
+Phase 3 Assignment:  Read SQL Data using PHP
+kat46@njit.edu  */
 .create_product_form {
     width: 500px;
     margin: 15px auto;
@@ -42,7 +47,7 @@
     width: 100%;
   }
 
-  .create_product_form  .button{
+.button{
     cursor: pointer;
     padding: 10px;
     border-radius: 10px;
