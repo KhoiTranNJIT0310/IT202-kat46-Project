@@ -3,6 +3,7 @@ March 10  16th 2024
 IT 202-002
 Phase 3 Assignment:  Read SQL Data using PHP
 kat46@njit.edu  */
+
 .create_product_form {
     width: 500px;
     margin: 15px auto;
@@ -31,7 +32,7 @@ kat46@njit.edu  */
     margin-top: 10px;
   }
   
-  .create_product_form input[type=text] {
+  .create_product_form input{
     display: block;
     height: 32px;
     padding: 6px 16px;

@@ -13,8 +13,12 @@ kat46@njit.edu -->
 
 <body>
   <figure>
+  <?php if ( isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) { ?>
+    <div class = "container">Welcome <?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]."! (". $_SESSION["emailAddress"].")" ?></div>
+<?php }?>
     <!-- wrapper to cover the whole page -->
     <div class='hero-wrapper'>
+      
       <!-- our hero section content -->
       <div class="hero">
         <!-- content on the left -->

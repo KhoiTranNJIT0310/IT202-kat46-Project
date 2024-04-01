@@ -2,7 +2,7 @@
 Febuary 16th 2024
 IT 202-002
 Phase 2 Assignment:  Read SQL Data using PHP
-kat46@njit.edu -->  
+kat46@njit.edu -->
 
 <?php
 require_once('database_njit.php');
@@ -72,18 +72,26 @@ $statement3->closeCursor();
 <body>
     <?php
 include("header.php");
+// Check if you have login or not
+
 ?>
+
     <main>
-        <aside class = "container">
+        <aside class="container">
+            <?php if ( isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) { ?>
+            <div>Welcome
+                <?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]."! (". $_SESSION["emailAddress"].")" ?>
+            </div>
+            <?php }?>
             <h2> Our shop provide:</h2>
             <table class="category-list">
                 <!-- from the queryAllCategories -->
                 <?php foreach ($categories as $category) : ?>
-                    <tr  >
-                        <a class="table-row" href="?sustaincategories_id=<?php  echo $category['sustainCategoryID']; ?>">
-                            <button ><?php echo $category['sustainCategoryName']; ?></button>
-                        </a>
-                    </tr>
+                <tr>
+                    <a class="table-row" href="?sustaincategories_id=<?php  echo $category['sustainCategoryID']; ?>">
+                        <button><?php echo $category['sustainCategoryName']; ?></button>
+                    </a>
+                </tr>
                 <?php endforeach; ?>
             </table>
         </aside>
@@ -93,21 +101,35 @@ include("header.php");
             <h2><?php echo $category_name; ?></h2>
             <table class="responsive-table">
                 <tr class="table-header">
-                    <!-- <th> Category Name</th>  redudant code--> 
+                    <!-- <th> Category Name</th>  redudant code-->
                     <th> Product Code</th>
                     <th> Product Name</th>
                     <th> Description</th>
                     <th>Price</th>
+                    <?php if (isset($_SESSION['is_valid_admin'])) { ?>
+                    <th> Delete</th>
+                    <?php }?>
                 </tr>
                 <?php foreach ($products as $product) : ?>
-                    <tr class="table-row">
-                        <!-- <td> <?php echo $category_name; ?></td> -->
-                        <!-- table bale item -->
-                        <td><?php echo $product['sustainCode']; ?></td>
-                        <td><?php echo $product['sustainName']; ?></td>
-                        <td><?php echo $product['description']; ?></td>
-                        <td><?php echo $product['price']; ?></td>
-                    </tr>
+                <tr class="table-row">
+                    <!-- <td> <?php echo $category_name; ?></td> -->
+                    <!-- table bale item -->
+                    <td><?php echo $product['sustainCode']; ?></td>
+                    <td><?php echo $product['sustainName']; ?></td>
+                    <td><?php echo $product['description']; ?></td>
+                    <td><?php echo $product['price']; ?></td>
+                    <?php if (isset($_SESSION['is_valid_admin'])) { ?>
+                    <td>
+                        <form action="delete_product.php" method="post">
+                            <input type="hidden" name="product_id" value="<?php echo $product['sustainID']; ?>" />
+                            <input type="hidden" name="sustaincategories_id"
+                                value="<?php echo $product['sustainCategoryID']; ?>" />
+                            <input class="button" type="submit" value="delete" />
+                        </form>
+                    </td>
+                    <?php }?>
+                </tr>
+
                 <?php endforeach; ?>
 
             </table>
@@ -117,4 +139,6 @@ include("header.php");
 <?php
 include("footer.php");
 ?>;
+
+
 </html>

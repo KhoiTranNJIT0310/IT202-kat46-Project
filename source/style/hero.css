@@ -8,6 +8,11 @@ kat46@njit.edu  */
     padding: 0;
     box-sizing: border-box;
 }
+.container {
+    max-width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+}
 .hero-wrapper{
     background-color: #E7F9D5;
     /* display: flex;
