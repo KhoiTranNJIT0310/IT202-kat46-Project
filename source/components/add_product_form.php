@@ -28,7 +28,7 @@ include("header.php");
 // Check if you have login or not
 if (isset($_SESSION['is_valid_admin'])) {
     ?>
-?>
+    
     <header class="container">
         <?php if ( isset($_SESSION['firstName']) && isset($_SESSION['lastName'])) { ?>
         <div>Welcome <?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]."! (". $_SESSION["emailAddress"].")" ?></div>
