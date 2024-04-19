@@ -1,7 +1,7 @@
 <!-- Khoi Tran 
-Febuary 16th 2024
+April 19th 2024
 IT 202-002
-Phase 2 Assignment:  Read SQL Data using PHP
+Phase 5 Assignment: Read SQL Data with PHP and JavaScript
 kat46@njit.edu -->
 
 <?php
@@ -72,8 +72,6 @@ $statement3->closeCursor();
 <body>
     <?php
 include("header.php");
-// Check if you have login or not
-
 ?>
 
     <main>
@@ -114,7 +112,7 @@ include("header.php");
                 <tr class="table-row">
                     <!-- <td> <?php echo $category_name; ?></td> -->
                     <!-- table bale item -->
-                    <td><?php echo $product['sustainCode']; ?></td>
+                    <td><a href="product_details.php?sustain_code=<?php echo $product['sustainCode']; ?>"><?php echo $product['sustainCode']; ?></a></td>
                     <td><?php echo $product['sustainName']; ?></td>
                     <td><?php echo $product['description']; ?></td>
                     <td><?php echo $product['price']; ?></td>
@@ -124,7 +122,7 @@ include("header.php");
                             <input type="hidden" name="product_id" value="<?php echo $product['sustainID']; ?>" />
                             <input type="hidden" name="sustaincategories_id"
                                 value="<?php echo $product['sustainCategoryID']; ?>" />
-                            <input class="button" type="submit" value="delete" />
+                            <input  id="button" class="button" type="submit" value="delete" />
                         </form>
                     </td>
                     <?php }?>
@@ -135,10 +133,35 @@ include("header.php");
             </table>
         </section>
     </main>
+
+
+
 </body>
 <?php
 include("footer.php");
 ?>;
+<!-- include the script -->
+    <script>
+        // create the poping box
+    const submit_delete = (event) =>{
+        console.log("called!");
+        const result = confirm("Are you sure? \n Press OK or Cancel Deletion.");
+        // if false, stop event
+        if(result  === false){
+            event.preventDefault();
+        }
+    }
+    // lsiten to click event
+    document.addEventListener(
+        "DOMContentLoaded", ()=>{
+            const submitButtons =document.querySelectorAll("#button");
+            submitButtons.forEach((button) => {
+                // call function
+                button.addEventListener("click", submit_delete);
+            });
+        }
 
+    )
+</script>
 
 </html>

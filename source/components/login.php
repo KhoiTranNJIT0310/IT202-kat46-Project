@@ -4,7 +4,7 @@
 // IT 202-002
 // Phase 4 Assignment:  PHP Authentication and Delete SQL Data
 // kat46@njit.edu 
-
+include("header.php");
 // create a login mesage
 if (!isset($login_message)) {
 $login_message = 'You must login to view this page.';
@@ -36,5 +36,10 @@ $login_message = 'You must login to view this page.';
    </form>
    <div class="container" ><h1><?php echo $login_message; ?></h1> </div>
  </main>
+ 
+ <?php
+include("footer.php");
+?>;
  </body>
+ 
 </html>

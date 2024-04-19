@@ -1,7 +1,7 @@
 <!-- Khoi Tran 
-March 10  16th 2024
+April 19th 2024
 IT 202-002
-Phase 3 Assignment:  Read SQL Data using PHP
+Phase 5 Assignment: Read SQL Data with PHP and JavaScript
 kat46@njit.edu -->
 <?php
 $sustaincategories_id = filter_input(INPUT_POST, 'sustaincategories_id', FILTER_VALIDATE_INT);

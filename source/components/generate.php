@@ -1,7 +1,7 @@
 <!-- Khoi Tran 
-Febuary 16th 2024
+April 19th 2024
 IT 202-002
-Phase 1 Assignment: HTML5 and PHP Form
+Phase 5 Assignment: Read SQL Data with PHP and JavaScript
 kat46@njit.edu -->
 <?php
 // get the data from the form
@@ -49,7 +49,7 @@ if (strlen($state) < 2) {
 }
 // validate length
 if ($length === false || $length < 0 || $length > 36) {
-    $error_message = "Width cannot be empty, less than 0 or greater than 36 inches";
+    $error_message = "Length cannot be empty, less than 0 or greater than 36 inches";
 }
 // validate width
 if ($width === false || $width < 0 || $width > 36) {
@@ -57,7 +57,7 @@ if ($width === false || $width < 0 || $width > 36) {
 }
 // validate height
 if ($height === false || $height < 0 || $height > 36) {
-    $error_message = "Width cannot be empty, less than 0 or greater than 36 inches";
+    $error_message = "Height cannot be empty, less than 0 or greater than 36 inches";
 }
 // validate declared value
 if ($declared_value === false || $declared_value < 0 || $declared_value  > 1000) {

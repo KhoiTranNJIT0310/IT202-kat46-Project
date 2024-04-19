@@ -1,7 +1,7 @@
 <!-- Khoi Tran 
-Febuary 16th 2024
+April 19th 2024
 IT 202-002
-Phase 1 Assignment: HTML5 and PHP Form
+Phase 5 Assignment: Read SQL Data with PHP and JavaScript
 kat46@njit.edu -->
 <html>
 
